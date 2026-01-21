@@ -8,7 +8,7 @@ type TaskUpdateProps = Pick<Task, 'id' | 'status'>;
 
 class TaskService {
   public getTasks = () => {
-    const result = db.prepare('SELECT * FROM tasks').get();
+    const result = db.prepare('SELECT * FROM tasks').all();
 
     return result;
   }

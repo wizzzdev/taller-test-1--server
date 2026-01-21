@@ -8,8 +8,9 @@ export const handleGetTasks = (req: Request, res: Response) => {
   } catch (error) {
     if ((error as any).code === 'TASK_NOT_FOUND') {
       res.status(404).json({ error: (error as any).message });
+    } else {
+      res.status(500).json({ error: (error as any).message });
     }
-    res.status(500).json({ error: (error as any).message });
   }
 };
 
@@ -30,8 +31,9 @@ export const handleUpdateTask = (req: Request, res: Response) => {
   } catch (error) {
     if ((error as any).code === 'TASK_NOT_FOUND') {
       res.status(404).json({ error: (error as any).message });
+    } else {
+      res.status(500).json({ error: (error as any).message });
     }
-    res.status(500).json({ error: (error as any).message });
   }
 };
 
@@ -43,7 +45,8 @@ export const handleGetTaskById = (req: Request, res: Response) => {
   } catch (error) {
     if ((error as any).code === 'TASK_NOT_FOUND') {
       res.status(404).json({ error: (error as any).message });
+    } else {
+      res.status(500).json({ error: (error as any).message });
     }
-    res.status(500).json({ error: (error as any).message });
   }
 };
